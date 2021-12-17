@@ -1,0 +1,5 @@
+1;Homo Deus;Yuval Noah Harari;dostepna;nigdy;nikogo
+2;Deutsche Nasz;Ewa Wanat;dostepna;01/12/2012;"marek33"
+3;Wiezniowie Geografii;Tim Marshall;dostepna;17/12/2021;"marek33"
+4;Calypso;David Sedaris;dostepna;11/11/2021;"marek33"
+5;Chiny 5.0;Kai Strittmatter;dostepna;17/12/2021;"marek33"
