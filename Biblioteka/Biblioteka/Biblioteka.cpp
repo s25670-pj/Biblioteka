@@ -10,6 +10,7 @@ const string usersFileName = "uzytkownicy.txt";
 
 void logging(vector <string>& booksList, vector <string>& usersList);
 bool loginAttempt(vector <string> usersList, string nickname, string password);
+int deleteCounter(string book);
 void showUsers(vector <string>& usersList);
 void showBooks(vector <string> books);
 void rentBook(vector <string>& booksList, string holderNickname);
@@ -54,6 +55,22 @@ int main()
     logging(booksList, usersList);
 
     return 0;
+}
+
+int deleteCounter(string book)
+{
+    int commaCounter = 0;
+    int toDelete = 0;
+
+    for (int i = 0; i < book.size(); i++)
+    {
+        if (book[i] == ';')
+            commaCounter++;
+        else if (commaCounter > 2)
+            toDelete++;
+    }
+
+    return toDelete + 2; //+2 poniewaz indeks liczony od '0' i pomijamy srednik
 }
 
 void logging(vector <string>& booksList, vector <string>& usersList)
@@ -210,7 +227,7 @@ void rentBook(vector <string>& booksList, string holderNickname)
                 date =  dd + "/" + mm + "/" + yyyy;
 
                 size = booksList[i].size();
-                booksList[i] = booksList[i].erase(size - 21, size) + "wypozyczona;" + date + ";" + '"' + holderNickname + '"';
+                booksList[i] = booksList[i].erase(size - deleteCounter(booksList[i]), size) + "wypozyczona;" + date + ";" + '"' + holderNickname + '"';
             }
         }
     }
